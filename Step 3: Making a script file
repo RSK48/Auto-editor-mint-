@@ -1,0 +1,23 @@
+Step i: Put the command in terminal
+nano autoeditor-direct.sh
+
+Step 2: Open the .sh file with a text editor, and paste the following:
+
+#!/bin/bash
+
+filename=$(zenity --file-selection --filename="$PWD/" --title="Select a video file")
+
+if [ -n "$filename" ]; then
+    gnome-terminal -- bash -c "/home/rsk/.local/bin/auto-editor \"$filename\"  --margin 0.05sec; echo; echo 'Done. Press Enter to close...'; read"
+else
+    zenity --error --text="No file selected."
+fi
+
+Step 3: Make it double-clickable from the file manager
+1. Open Nemo (Mint's file manager).
+2. Right-click your autoeditor.sh file → Properties → Permissions → Set "Allow executing file as a program" ✅
+3. Then in Edit → Preferences → Behavior, set "Executable Text Files" to "Ask what to do" or "Run".
+
+Step 4: Install zenity
+sudo apt install zenity
+
