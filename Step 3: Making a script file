@@ -15,7 +15,7 @@ fi
 
 Step 3: Make it double-clickable from the file manager
 1. Open Nemo (Mint's file manager).
-2. Right-click your autoeditor.sh file → Properties → Permissions → Set "Allow executing file as a program" ✅
+2. Right-click your autoeditor-direct.sh file → Properties → Permissions → Set "Allow executing file as a program" ✅
 3. Then in Edit → Preferences → Behavior, set "Executable Text Files" to "Ask what to do" or "Run".
 
 Step 4: Install zenity
