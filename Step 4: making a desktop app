@@ -1,0 +1,33 @@
+Step 1:
+go to /home/{username}      #for me it's '/home/rsk'
+
+Step 2:
+Create a .desktop file (You can set your own custom name)      #for it's 'Auto Cut EX.desktop'
+
+IMPORTANT: locate your auto-editor with terminal, use: which auto-editor (we will use the result in the next step)
+
+Step 3: 
+Copy and paste them;
+[Desktop Entry]
+Name=Auto Cut EX
+Comment=Edit videos automatically
+Exec={paste the location here}            #for me it's '/home/rsk/AutoCut/autoeditor-direct.sh'
+Icon={you can make an icon}               #i made one with photoshop (svg) then put it in the same place as the .sh file, for me it was '/home/rsk/AutoCut/autocut.svg'
+Terminal=true
+Type=Application
+Categories=AudioVideo;
+
+## my version:
+[Desktop Entry]
+Name=Auto Cut EX
+Comment=Edit videos automatically for Premiere Pro
+Exec=/home/rsk/AutoCut/autoeditor-direct.sh
+Icon=/home/rsk/AutoCut/autocut.svg
+Terminal=true
+Type=Application
+Categories=AudioVideo;
+
+
+Step 4: run this in terminal
+chmod +x ~/Desktop/Auto\ Cut\ EX.desktop
+mv ~/Desktop/Auto\ Cut\ EX.desktop ~/.local/share/applications/
