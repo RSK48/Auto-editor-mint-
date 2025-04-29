@@ -1,0 +1,36 @@
+Copy and paste the following commands one by one, step by step:
+
+command 1: 
+sudo apt install python3
+
+command 2: 
+sudo apt update
+
+command 3: 
+sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncurses5-dev libncursesw5-dev xz-utils tk-dev \
+libffi-dev liblzma-dev git
+
+command 4:
+cd /usr/src
+sudo wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tgz
+sudo tar xzf Python-3.13.0.tgz
+
+command 5:
+cd Python-3.13.0
+
+command 6:
+sudo ./configure --enable-optimizations
+
+command 7:
+sudo make -j $(nproc)    
+
+command 8:
+sudo make altinstall
+
+
+
+
+To check if the python is installed or not, paste this in terminal:
+python3.13 --version
