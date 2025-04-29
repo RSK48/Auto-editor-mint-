@@ -1,0 +1,12 @@
+Command1:
+sudo apt install pipx
+
+Command2:
+pipx ensurepath
+
+Command3:
+pipx install auto-editor
+
+
+To check if "Auto-editor" was intalled or not, put this command in the terminal:
+auto-editor --help
