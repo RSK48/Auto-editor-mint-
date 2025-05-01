@@ -126,7 +126,8 @@ pipx install auto-editor
 
 <h2>Step 3: Making an executable file:</h2>
 <h3>For Windows:</h3>
-<p>File (.bat) -> <a href="https://files.catbox.moe/1sxgit.bat" target="_blank">Download</a></p>
+<p>File (.bat) -> <a href="https://files.catbox.moe/1sxgit.bat" target="_blank">Download</a> (to make a direct .mp4/.wav file)</p>
+<p>File (.bat) -> <a href="https://files.catbox.moe/pdlqm7.bat" target="_blank">Download</a> (to make a premiere pro project file)</p>
 <br>
 <p><b>How it works? (For windows only)</b></p>
 <ol>
@@ -163,6 +164,38 @@ filename=$(zenity --file-selection --filename="$PWD/" --title="Select a video fi
 
 if [ -n "$filename" ]; then
     gnome-terminal -- bash -c "/home/rsk/.local/bin/auto-editor \"$filename\"  --margin 0.05sec; echo; echo 'Done. Press Enter to close...'; read"
+else
+    zenity --error --text="No file selected."
+fi
+  </code></pre>
+</div>
+
+<b>Step 2.1:</b> To make DaVinci Resolve project file.
+Open the .sh file with a text editor, and paste the following:
+<div class="code-container">
+  <pre><code>
+#!/bin/bash
+
+filename=$(zenity --file-selection --filename="$PWD/" --title="Select a video file")
+
+if [ -n "$filename" ]; then
+    gnome-terminal -- bash -c "/home/rsk/.local/bin/auto-editor \"$filename\"  --export resolve --margin 0.05sec; echo; echo 'Done. Press Enter to close...'; read"
+else
+    zenity --error --text="No file selected."
+fi
+  </code></pre>
+</div>
+
+<b>Step 2.2:</b> To make ShotCut project file.
+Open the .sh file with a text editor, and paste the following:
+<div class="code-container">
+  <pre><code>
+#!/bin/bash
+
+filename=$(zenity --file-selection --filename="$PWD/" --title="Select a video file")
+
+if [ -n "$filename" ]; then
+    gnome-terminal -- bash -c "/home/rsk/.local/bin/auto-editor \"$filename\"  --export shotcut --margin 0.05sec; echo; echo 'Done. Press Enter to close...'; read"
 else
     zenity --error --text="No file selected."
 fi
