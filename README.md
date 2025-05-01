@@ -77,7 +77,7 @@ python3.13 --version
   </code></pre>
 </div>
 
-If you will this text, your installation was successful!:
+If your installation was successful, you will this text:
 <pre><code>
 python3.13.0
 </code></pre>
