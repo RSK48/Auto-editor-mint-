@@ -99,7 +99,7 @@ This should install the tool, to check if it was installed or not. Run this comm
 <div class="code-container">
   <button class="copy-button" onclick="copyCode(this)"></button>
   <pre><code id="code">
-pip install auto-editor
+auto-editor --help
   </code></pre>
 </div>
 
