@@ -5,7 +5,7 @@ I made an executable file for auto-editor where you open it and select the file 
 For auto-editor to work, you need python 3.13 installed in your system.
 
 <h3>For Windows:</h3>
-To download from official source: <a href="https://www.python.org/downloads/release/python-3133/">Click here</a>
+To download from official source: <a href="https://www.python.org/downloads/release/python-3133/" target="_blank">Click here</a>
 <h3>For Linux:</h3>
 Run this command in the terminal one by spne, step by step:
 <div class="code-container">
@@ -83,7 +83,7 @@ python3.13.0
 </code></pre>
 
 <h2>Step-2:Installing Auto-Editor</h2>
-<p>Our video will be cut or edited with auto-editor tool. It is an open source tool that I found in github, <a href="https://github.com/WyattBlue/auto-editor">click here to visit them</a>.</p><br>
+<p>Our video will be cut or edited with auto-editor tool. It is an open source tool that I found in github, <a href="https://github.com/WyattBlue/auto-editor" target="_blank">click here to visit them</a>.</p><br>
 
 <p>##Comment: <i>They use CMD or terminal command to edit your video, I think it is too painful and requires a little bit more time. I don't want to copy my file name and insert it manually there, so I made an executable file to make this process less time consuming and easy.</i></p>
 
@@ -126,7 +126,7 @@ pipx install auto-editor
 
 <h2>Step 3: Making an executable file:</h2>
 <h3>For Windows:</h3>
-<p>File (.bat) -> <a href="https://files.catbox.moe/1sxgit.bat">Download</a></p>
+<p>File (.bat) -> <a href="https://files.catbox.moe/1sxgit.bat" target="_blank">Download</a></p>
 <br>
 <p><b>How it works? (For windows only)</b></p>
 <ol>
@@ -222,7 +222,7 @@ Categories=AudioVideo;
 </div>
 
 <br>
-<p>To get my icon -> <a href="https://files.catbox.moe/o5kunf.svg">Download</a></p>
+<p>To get my icon -> <a href="https://files.catbox.moe/o5kunf.svg" target="_blank">Download</a></p>
 <b>Step 4:</b> Run this in terminal:
 <div class="code-container">
   <pre><code>
