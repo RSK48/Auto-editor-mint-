@@ -163,11 +163,19 @@ nano autoeditor-direct.sh
 filename=$(zenity --file-selection --filename="$PWD/" --title="Select a video file")
 
 if [ -n "$filename" ]; then
-    gnome-terminal -- bash -c "/home/rsk/.local/bin/auto-editor \"$filename\"  --margin 0.05sec; echo; echo 'Done. Press Enter to close...'; read"
+    # Ask for margin value (number only, no units)
+    margin_number=$(zenity --entry --title="Set Margin" --text="Enter margin in seconds (e.g. 0.05):" --entry-text="0.05")
+
+    if [ -n "$margin_number" ]; then
+        margin="${margin_number}sec"  # append 'sec' here automatically
+        gnome-terminal -- bash -c "/home/rafid/.local/bin/auto-editor \"$filename\" --margin $margin; echo; echo 'Done. Press Enter to close...'; read"
+    else
+        zenity --error --text="No margin value entered."
+    fi
 else
     zenity --error --text="No file selected."
 fi
-  </code></pre>
+
 </div>
 
 <b>Step 2.1:</b> To make DaVinci Resolve project file.
