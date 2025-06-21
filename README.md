@@ -175,8 +175,9 @@ if [ -n "$filename" ]; then
 else
     zenity --error --text="No file selected."
 fi
-
 </div>
+
+<p>executable file (.sh) -> <a href="https://files.catbox.moe/mg2b8a.sh" target="_blank">Download</a> (.sh file)</p>
 
 <b>Step 2.1:</b> To make DaVinci Resolve project file.
 Open the .sh file with a text editor, and paste the following:
