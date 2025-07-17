@@ -4,6 +4,7 @@ import subprocess
 import os
 from tkinter.font import Font
 import sv_ttk  # Modern theme package
+import webbrowser  # Added for opening URLs
 
 class AutoEditorGUI:
     def __init__(self, root):
@@ -21,6 +22,7 @@ class AutoEditorGUI:
         self.style.configure("TCheckbutton", background="#1c1c1c", foreground="#ffffff")
         self.style.configure("TEntry", fieldbackground="#1c1c1c", foreground="#ffffff")
         self.style.map("TEntry", fieldbackground=[("readonly", "#1c1c1c")])
+        self.style.configure("Link.TLabel", foreground="#4a9cff", font=("Segoe UI", 9))  # Style for clickable links
         
         # Main container with modern padding
         self.main_frame = ttk.Frame(root, padding=(20, 15))
@@ -121,12 +123,44 @@ class AutoEditorGUI:
         self.status_var.set("Ready")
         self.status_bar = ttk.Frame(self.main_frame, height=25)
         self.status_bar.pack(fill="x", pady=(5, 0))
+        
+        # Status label
         ttk.Label(
             self.status_bar,
             textvariable=self.status_var,
             anchor="w",
             style="TLabel"
         ).pack(side="left", padx=10)
+        
+        # Credit label with clickable links (NEW ADDITION)
+        credit_frame = ttk.Frame(self.status_bar)
+        credit_frame.pack(side="right", padx=10)
+        
+        ttk.Label(credit_frame, text="GUI developed by ", style="TLabel").pack(side="left")
+        
+        # RSK48 link (clickable)
+        rsk48 = ttk.Label(
+            credit_frame,
+            text="RSK48",
+            style="Link.TLabel",
+            cursor="hand2"
+        )
+        rsk48.pack(side="left")
+        rsk48.bind("<Button-1>", lambda e: webbrowser.open_new("https://www.instagram.com/_rsk48_/"))
+        
+        ttk.Label(credit_frame, text=" (aka ", style="TLabel").pack(side="left")
+        
+        # AAKANO link (clickable)
+        aakano = ttk.Label(
+            credit_frame,
+            text="AAKANO",
+            style="Link.TLabel",
+            cursor="hand2"
+        )
+        aakano.pack(side="left")
+        aakano.bind("<Button-1>", lambda e: webbrowser.open_new("https://www.youtube.com/@aakano-rsk"))
+        
+        ttk.Label(credit_frame, text=")", style="TLabel").pack(side="left")
         
         # Run button with accent color
         self.run_btn = ttk.Button(
@@ -142,6 +176,7 @@ class AutoEditorGUI:
         self._update_file_display()
         self.root.minsize(650, 550)
     
+    # [Rest of your original methods (add_files, add_folder, etc.) stay the same!]
     def add_files(self):
         files = filedialog.askopenfilenames(
             title="Select media files",
